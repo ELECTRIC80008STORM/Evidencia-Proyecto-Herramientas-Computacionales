@@ -13,6 +13,83 @@ from turtle import *
 from freegames import line
 
 
+def check(x, y, box):
+    "To check if the box is taken"
+    newX = int(x)
+    newY = int(y)
+    # Box 0
+    if ((newX == -200) & (newY == 66)):
+        if box[0] == 1:
+            return True
+        else:
+            box[0] = 1
+            return False
+
+    # Box 1
+    if ((newX == -67) & (newY == 66)):
+        if (box[1] == 1):
+            return True
+        else:
+            box[1] = 1
+            return False
+
+    # Box 2
+    if ((newX == 66) & (newY == 66)):
+        if (box[2] == 1):
+            return True
+        else:
+            box[2] = 1
+            return False
+
+    # Box 3
+    if ((newX == -200) & (newY == -67)):
+        if (box[3] == 1):
+            return True
+        else:
+            box[3] = 1
+            return False
+
+    # Box 4
+    if ((newX == -67) & (newY == -67)):
+        if (box[4] == 1):
+            return True
+        else:
+            box[4] = 1
+            return False
+
+    # Box 5
+    if ((newX == 66) & (newY == -67)):
+        if (box[5] == 1):
+            return True
+        else:
+            box[5] = 1
+            return False
+
+    # Box 6
+    if ((newX == -200) & (newY == -200)):
+        if (box[6] == 1):
+            return True
+        else:
+            box[6] = 1
+            return False
+
+    # Box 7
+    if ((newX == -67) & (newY == -200)):
+        if (box[7] == 1):
+            return True
+        else:
+            box[7] = 1
+            return False
+
+    # Box 8
+    if ((newX == 66) & (newY == -200)):
+        if (box[8] == 1):
+            return True
+        else:
+            box[8] = 1
+            return False
+
+
 def grid():
     """Draw tic-tac-toe grid."""
     line(-67, 200, -67, -200)
@@ -44,17 +121,20 @@ def floor(value):
 
 state = {'player': 0}
 players = [drawx, drawo]
+boxes = [0, 0, 0, 0, 0, 0, 0, 0, 0]
 
 
 def tap(x, y):
-    """Draw X or O in tapped square."""
+    # Draw X or O in tapped square.
     x = floor(x)
     y = floor(y)
-    player = state['player']
-    draw = players[player]
-    draw(x, y)
-    update()
-    state['player'] = not player
+
+    if check(x, y, boxes) is False:
+        player = state['player']
+        draw = players[player]
+        draw(x, y)
+        update()
+        state['player'] = not player
 
 
 setup(420, 420, 370, 0)
