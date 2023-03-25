@@ -47,7 +47,8 @@ def tap(x, y):
     mark = state['mark']
     """Calls an update for taps"""
     updateTaps()
-    
+    """Call an check for taps"""
+    checkMarks()
     if mark is None or mark == spot or tiles[mark] != tiles[spot]:
         state['mark'] = spot
     else:
@@ -88,7 +89,11 @@ def updateTaps():
     inputtxt = ttk.Label(width=4, text=tapN)
     inputtxt.place(x=40, y=10)    
 
- 
+def checkMarks():
+    """Verify if all tiles are discover"""
+    if not True in hide:
+        inputtxt = ttk.Label(width=4, text="You discovered all tiles!!")
+        inputtxt.place(x=100, y=100)     
 
 shuffle(tiles)
 setup(420, 420, 370, 0)
