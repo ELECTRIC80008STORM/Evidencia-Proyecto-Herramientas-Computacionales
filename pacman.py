@@ -10,8 +10,10 @@ Exercises
 """
 
 from random import choice
-from turtle import *
 
+from turtle import Turtle
+from turtle import bgcolor, clear, up, goto, dot, update, ontimer, setup
+from turtle import hideturtle, tracer, listen, onkey, done
 from freegames import floor, vector
 
 state = {'score': 0}
