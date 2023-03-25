@@ -20,6 +20,8 @@ state = {'score': 0}
 path = Turtle(visible=False)
 writer = Turtle(visible=False)
 aim = vector(5, 0)
+# The pacman y coordinate was change from -80 to -120
+# to adapt it to the new board
 pacman = vector(-40, -120)
 ghosts = [
     [vector(-180, 160), vector(5, 0)],
@@ -28,6 +30,7 @@ ghosts = [
     [vector(100, -160), vector(-5, 0)],
 ]
 # fmt: off
+# tiles values were changed in order to make the new board
 tiles = [
     0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
     0, 1, 1, 1, 1, 1, 1, 1, 0, 1, 1, 1, 1, 1, 1, 1, 0, 0, 0, 0,
@@ -157,6 +160,7 @@ def move():
         if abs(pacman - point) < 20:
             return
 
+    # Miliseconds were decreased from 100 to 30 to increase speed
     ontimer(move, 30)
 
 
