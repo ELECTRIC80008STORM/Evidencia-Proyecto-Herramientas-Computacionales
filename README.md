@@ -2,7 +2,7 @@
 Repositorio de nuestra evidencia final para la clase de Herramientas Computacionales.
 
 
-## Juego de Pacman (Cambios realizados por Rommel - A01709922)
+## Juego de Pacman (Cambios realizados por ?)
 
 ### Cambios en los valores de la lista _tiles_[]
 Tras analizar la lista tiles y su efecto en la representación del mapa, concluimos que los valores de 0 representan un bloque de barrera con el cual ni los fantasmas ni pacman pueden interactuar, los valores de 1 representan los caminos por los que se pueden pasar y que poseen un punto. Al notar esto lo que se hizo fue reemplazar manualmente los valores para generar el nuevo tablero.
